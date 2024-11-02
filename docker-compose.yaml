@@ -1,0 +1,10 @@
+version: "3"
+services:
+  hello-app-be:
+    image: hello-app-be
+    ports:
+      - "5050:8088"
+  hello-app-fe:
+    image: hello-app-fe
+    ports:
+      - "3000:3000"

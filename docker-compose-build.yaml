@@ -1,0 +1,10 @@
+version: "3"
+services:
+  hello-app-be:
+    build:
+      context: ./backend
+    image: hello-app-be
+  hello-app-fe:
+    build:
+      context: ./client
+    image: hello-app-fe

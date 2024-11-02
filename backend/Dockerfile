@@ -1,18 +1,13 @@
 # Use a lightweight Java image as the base
-FROM openjdk:17-jdk-alpine
+FROM openjdk:21-jdk
 
 # Set the working directory
-WORKDIR app
+WORKDIR /app
 
-# Copy the application code
-COPY src src
-COPY build.gradle gradlew gradlew*
-
-# Build the application
-RUN ./gradlew bootJar
+COPY build/libs/*.jar app.jar
 
 # Expose the port where the app will run
-EXPOSE 8080
+EXPOSE 8088
 
 # Start the app
-CMD ["java", "-jar", "build/libs/*.jar"]
+CMD ["java", "-jar", "app.jar"]
